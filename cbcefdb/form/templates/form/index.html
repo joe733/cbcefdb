@@ -1,42 +1,8 @@
 {% extends "form/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 <h1 class="text-center">CBCEF</h1>
-<form>
-    <!-- Question 01 -->
-    <div class="mb-3">
-        <label for="officialName" class="form-label">1. ഔദ്യോഗിക പേര് | Official Name</label>
-        <input class="form-control" type="text" placeholder="Full Name" aria-label="fullName">
-    </div>
-
-    <!-- Question 02 -->
-    <div class="mb-3">
-        <label for="nicknames" class="form-label">2. വിളിപ്പേരുകൾ പേര് | Aliases / Nicknames</label>
-        <textarea class="form-control" id="nicknames" rows="2"></textarea>
-    </div>
-
-    <!-- Question 03 -->
-    <div class="mb-3">
-        <label for="gender" class="form-label">3. ലിംഗഭേദം | Gender</label>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="gender-male" checked>
-            <label class="form-check-label" for="gender-male">
-                പുരുഷന്‍ | Male
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="gender-female">
-            <label class="form-check-label" for="gender-female">
-                സ്ത്രീ | Female
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="gender" id="gender-other">
-            <label class="form-check-label" for="gender-other">
-                ഭിന്ന ലിംഗം | Other
-            </label>
-        </div>
-    </div>
-    <!--Submit-->
-    <button type="submit" class="btn btn-primary">Submit</button>
+<form method="post" class="bootstrap5">
+    {{ my_formset|crispy }}
 </form>
 {% endblock content %}
