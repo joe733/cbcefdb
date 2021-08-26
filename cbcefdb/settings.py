@@ -113,7 +113,7 @@ TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -135,3 +135,12 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Phone Number format
 PHONENUMBER_DB_FORMAT = 'NATIONAL'
+
+# Change date format
+DATE_INPUT_FORMATS = ('%d-%m-%Y', '%d/%m/%Y', '%d/%m/%y', '%d %b %Y',
+                      '%d %b, %Y', '%d %b %Y', '%d %b, %Y', '%d %B, %Y',
+                      '%d %B %Y')
+
+DATETIME_INPUT_FORMATS = ('%d/%m/%Y %H:%M:%S', '%d/%m/%Y %H:%M', '%d/%m/%Y',
+                          '%d/%m/%y %H:%M:%S', '%d/%m/%y %H:%M', '%d/%m/%y',
+                          '%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%Y-%m-%d')
