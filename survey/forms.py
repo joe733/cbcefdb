@@ -1,13 +1,12 @@
-# from json import load
+from json import load
 from django import forms
-from django.forms import fields
-from .models import Survey, questions
+from .models import Survey
 
 form_fields = []
 answers = q_atrb = dict()
 
-# with open(file="survey/assets/questions.json", mode='r', encoding="utf-8") as jfp:
-#     questions = load(jfp)
+with open(file="survey/assets/questions.json", mode='r', encoding="utf-8") as jfp:
+    questions = load(jfp)
 
 
 def load_questions():

@@ -1,31 +1,33 @@
-from os import name
 from django.db import models
-from json import load
+from datetime import date
 
-form_fields = []
-answers = q_atrb = dict()
-
-with open(file="survey/assets/questions.json", mode='r', encoding="utf-8") as jfp:
-    questions = load(jfp)
-
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
+
+
 class Survey(models.Model):
-    for idx in range(1, 11):
-        q_atrb = questions[str(idx)]
-        form_fields.append(q_atrb["label"])
-
-        if q_atrb["element_type"] == "textbox":
-            if q_atrb["input_type"] in ["text_input", "text_area"]:
-                answers[q_atrb["label"]] = models.CharField(
-                    name=q_atrb["label"])
-            if q_atrb["input_type"] == "number_input":
-                answers[q_atrb["label"]] = models.IntegerField(
-                    name=q_atrb["label"])
-
-        if q_atrb["element_type"] == "radio":
-            answers[q_atrb["label"]] = models.CharField(
-                choices=[(idx, val) for idx, val in enumerate(q_atrb["optionValues"])])
+    q_01 = models.CharField(name="Full Name", max_length=40, default="")
+    q_02 = models.CharField(name="Nick name", max_length=40, default="")
+    q_03 = models.CharField(name="Gender", choices=(
+        (1, "Male"), (2, "Female"), (3, "Other")), max_length=10, default="Male")
+    q_04 = models.DateField(name="Date of Birth", default=date(1111, 11, 11))
+    q_05 = models.CharField(name="Relation to the Family", choices=(
+        (1, "Father"),
+        (2, "Mother"),
+        (3, "Husband"),
+        (4, "Wife"),
+        (5, "Son"),
+        (6, "Daughter"),
+        (7, "Brother"),
+        (8, "Sister"),
+    ), max_length=10, default="Father")
+    q_06 = models.CharField(name="Father's Name", max_length=40, default="")
+    q_07 = models.CharField(name="Mother's Name", max_length=40, default="")
+    q_08 = models.CharField(name="Guardian's Name", max_length=40, default="")
+    q_09 = PhoneNumberField(name="Mobile Number")
+    q_10 = models.EmailField(name="Email Address",
+                             max_length=60, default="")
 
     def __str__(self):
-        return q_atrb["0"]["label"]
+        return self.q_01
