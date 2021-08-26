@@ -136,5 +136,30 @@ class Survey(models.Model):
         (6, "കാർഡ് ഇല്ല | No Card"),
     ), max_length=60, default="തെരഞ്ഞെടുക്കുക | Select")
 
+    # Question 21 - 30
+    q_21 = models.CharField(name="പാസ്പോര്‍ട്ട്‌ | Passport", choices=(
+        (1, "തെരഞ്ഞെടുക്കുക | Select"),
+        (2, "ഉണ്ട് | Yes"),
+        (3, "ഇല്ല | No"),
+    ), max_length=60, default="തെരഞ്ഞെടുക്കുക | Select")
+    q_22 = models.DateField("രക്ഷിക്കപ്പെട്ട തിയതി | Date of Salvation", default=date(
+        day=11, month=11, year=1111))
+    q_23 = models.DateField("സ്നാനപ്പെട്ട തിയതി | Date of Baptism", default=date(
+        day=11, month=11, year=1111))
+    q_24 = models.CharField(
+        name="ഈ വിശ്വാസത്തിലേക്ക് വന്നപ്പോഴത്തെ സഭ (മാതൃ സഭ) | Church in which you were saved (Parent Church)", max_length=200, default="")
+    q_25 = models.CharField(
+        name="സ്നാനം നടത്തിയ സ്ഥാനീയ സഭ | Church in which you were baptized", max_length=200, default="")
+    q_26 = models.CharField(
+        name="വിവാഹം നടത്തിയ സ്ഥാനീയ സഭ | Church in which you were married", max_length=200, default="")
+    q_27 = models.CharField(
+        name="ഈ വിശ്വാസത്തിലേക്ക് വരുന്നതിന് മുന്‍പ് ഉണ്ടായിരുന്ന വിശ്വാസ പശ്ചാത്തലം | Previous Faith (if any)", max_length=200, default="")
+    q_28 = models.CharField(
+        name="പിതാവിന്‍റെ വിശ്വാസ പശ്ചാത്തലം | Father's faith background", max_length=200, default="")
+    q_29 = models.CharField(
+        name="മാതാവിന്‍റെ വിശ്വാസ പശ്ചാത്തലം | Mother's faith background", max_length=200, default="")
+    q_30 = models.CharField(
+        name="മറ്റു സഭകളില്‍ അംഗം ആയിരുന്നെങ്കില്‍ ആ സഭയുടെ പേരും അവിടെ തുടര്‍ന്ന വര്‍ഷങ്ങളും | Prevous Assembly (if any) & the no. of years you've attended it", max_length=200, default="")
+
     def __str__(self):
         return self.q_01
