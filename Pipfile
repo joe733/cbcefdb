@@ -8,6 +8,7 @@ django = "*"
 autopep8 = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
+django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
 
 [dev-packages]
 
