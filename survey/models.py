@@ -9,18 +9,18 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Survey(models.Model):
     # Question 1 - 10
     q_01 = models.CharField(
-        name="1. ഔദ്യോഗിക പേര് | Full Name", max_length=100, default="")
+        name="01. ഔദ്യോഗിക പേര് | Full Name", max_length=100, default="")
     q_02 = models.CharField(
-        name="2. വിളിപ്പേരുകൾ പേര് | Aliases / Nicknames", max_length=100, default="")
-    q_03 = models.CharField(name="3. ലിംഗഭേദം | Gender", choices=(
+        name="02. വിളിപ്പേരുകൾ പേര് | Aliases / Nicknames", max_length=100, default="")
+    q_03 = models.CharField(name="03. ലിംഗഭേദം | Gender", choices=(
         ("1", "തിരഞ്ഞെടുക്കുക | Select"),
         ("2", "പുരുഷന്‍ | Male"),
         ("3", "സ്ത്രീ | Female"),
         ("4", "ഭിന്ന ലിംഗം | Other"),
     ), max_length=60, default="തിരഞ്ഞെടുക്കുക | Select")
-    q_04 = models.DateField(name="4. ജനന തിയതി | Date of Birth",
+    q_04 = models.DateField(name="04. ജനന തിയതി | Date of Birth",
                             default=date(day=11, month=11, year=1111))
-    q_05 = models.CharField(name="5. ബന്ധം | Relation", choices=(
+    q_05 = models.CharField(name="05. ബന്ധം | Relation", choices=(
         ("1", "തിരഞ്ഞെടുക്കുക | Select"),
         ("2", "പിതാവ് | Father"),
         ("3", "മാതാവ് | Mother"),
@@ -32,12 +32,12 @@ class Survey(models.Model):
         ("9", "സഹോദരി | Sister"),
     ), max_length=60, default="തിരഞ്ഞെടുക്കുക | Select")
     q_06 = models.CharField(
-        name="6. പിതാവിന്‍റെ പേര് | Father's Name", max_length=100, default="")
+        name="06. പിതാവിന്‍റെ പേര് | Father's Name", max_length=100, default="")
     q_07 = models.CharField(
-        name="7. മാതാവിന്‍റെ പേര് | Mother's Name", max_length=100, default="")
+        name="07. മാതാവിന്‍റെ പേര് | Mother's Name", max_length=100, default="")
     q_08 = models.CharField(
-        name="8. ഗാർഡിയന്റെ പേര് | Guardian's Name", max_length=100, default="")
-    q_09 = PhoneNumberField(name="9. മൊബൈല്‍ഫോണ്‍ നമ്പര്‍ | Mobile Number")
+        name="08. ഗാർഡിയന്റെ പേര് | Guardian's Name", max_length=100, default="")
+    q_09 = PhoneNumberField(name="09. മൊബൈല്‍ഫോണ്‍ നമ്പര്‍ | Mobile Number")
     q_10 = models.EmailField(name="10. ഇ മെയില്‍ അഡ്രസ്‌ | Email Address",
                              max_length=60, default="")
 
