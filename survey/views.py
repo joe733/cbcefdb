@@ -30,4 +30,4 @@ class FamilyCreateView(CreateView):
 
 class FamilyInfoView(DetailView):
     model = Family
-    template_name = "family_info.html"
+    template_name = "info_family.html"

@@ -11,7 +11,7 @@
 
     {% for fam in family_list %}
     <li class="list-group-item">
-        <a class="text-reset" href="family.get_absolute_url">{{ fam.fam_name }}</a>
+        <a class="text-reset" href="{{ fam.get_absolute_url }}">{{ fam.fam_name }}</a>
     </li>
     {% endfor %}
 
