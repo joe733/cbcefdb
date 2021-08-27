@@ -1,0 +1,27 @@
+{% extends "survey/base.html" %}
+
+{% block title %} Families {% endblock %}
+
+{% block content %}
+
+<h2 class="text-center">Families</h2>
+
+{% if families %}
+<ul class="list-group">
+
+    {% for fam in families %}
+    <li class="list-group-item">
+        <a class="text-reset" href="">{{ fam.fam_name }}</a>
+    </li>
+    {% endfor %}
+
+</ul>
+{% else %}
+<p>Oops! Nothin's here!</p>
+{% endif %}
+
+<p class="pt-2">
+    <a href="{% url 'survey:survey-home' %}" role="button" class="btn btn-secondary w-100">Return</a>
+</p>
+
+{% endblock content %}
