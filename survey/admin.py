@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Survey
+from .models import Family, Individual
 
 # Register your models here.
-admin.site.register(Survey)
+admin.site.register(Family)
+admin.site.register(Individual)

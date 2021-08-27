@@ -3,13 +3,26 @@ from datetime import date
 
 from phonenumber_field.modelfields import PhoneNumberField
 
-# Create your models here.
+
+class Family(models.Model):
+    fam_name = models.CharField(
+        "കുടുംബ പേര് | Family Name", null=False, blank=False, max_length=100, default="")
+    nofm = models.IntegerField(
+        "അംഗങ്ങളുടെ എണ്ണം | Number of members", default=1)
+
+    def __str__(self) -> str:
+        return self.fam_name
+
+    class Meta:
+        verbose_name_plural = "Families"
 
 
-class Survey(models.Model):
+class Individual(models.Model):
+    f_name = models.ForeignKey(
+        name="Family Name", to=Family, null=False, blank=False, on_delete=models.CASCADE, related_name="family_name")
     # Question 1 - 10
     q_01 = models.CharField(
-        name="01. ഔദ്യോഗിക പേര് | Full Name", max_length=100, default="")
+        name="01. ഔദ്യോഗിക പേര് | Full Name", null=False, blank=False, max_length=100, default="")
     q_02 = models.TextField(
         name="02. വിളിപ്പേരുകൾ പേര് | Aliases / Nicknames", max_length=200, default="")
     q_03 = models.CharField(name="03. ലിംഗഭേദം | Gender", choices=(
@@ -220,3 +233,6 @@ class Survey(models.Model):
                             upload_to="survey/assets/", blank=True, default="")
     q_44 = models.FileField(name="44. മരണത്തിനുള്ള രേഖ തെളിവ് | Document proof for death",
                             upload_to="survey/assets/", blank=True, default="")
+
+    def __str__(self) -> str:
+        return self.q_01

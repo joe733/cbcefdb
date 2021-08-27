@@ -1,11 +1,12 @@
-from django import forms
-from django.shortcuts import render
+from django.views.generic import TemplateView, ListView
 
-from .forms import IndividualForm
-
-# Create your views here.
+from .models import Family
 
 
-def home(request):
-    form = IndividualForm()
-    return render(request=request, template_name='survey/index.html', context={'form': form})
+class HomeView(TemplateView):
+    template_name = "survey/index.html"
+
+
+class FamilyView(ListView):
+    model = Family
+    template_name = "survey/families.html"
