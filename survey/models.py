@@ -10,8 +10,8 @@ class Survey(models.Model):
     # Question 1 - 10
     q_01 = models.CharField(
         name="01. ഔദ്യോഗിക പേര് | Full Name", max_length=100, default="")
-    q_02 = models.CharField(
-        name="02. വിളിപ്പേരുകൾ പേര് | Aliases / Nicknames", max_length=100, default="")
+    q_02 = models.TextField(
+        name="02. വിളിപ്പേരുകൾ പേര് | Aliases / Nicknames", max_length=200, default="")
     q_03 = models.CharField(name="03. ലിംഗഭേദം | Gender", choices=(
         ("1", "തിരഞ്ഞെടുക്കുക | Select"),
         ("2", "പുരുഷന്‍ | Male"),
@@ -146,23 +146,23 @@ class Survey(models.Model):
         day=11, month=11, year=1111))
     q_23 = models.DateField("23. സ്നാനപ്പെട്ട തിയതി | Date of Baptism", default=date(
         day=11, month=11, year=1111))
-    q_24 = models.CharField(
+    q_24 = models.TextField(
         name="24. ഈ വിശ്വാസത്തിലേക്ക് വന്നപ്പോഴത്തെ സഭ (മാതൃ സഭ) | Church in which you were saved (Parent Church)", max_length=200, default="")
-    q_25 = models.CharField(
+    q_25 = models.TextField(
         name="25. സ്നാനം നടത്തിയ സ്ഥാനീയ സഭ | Church in which you were baptized", max_length=200, default="")
-    q_26 = models.CharField(
+    q_26 = models.TextField(
         name="26. വിവാഹം നടത്തിയ സ്ഥാനീയ സഭ | Church in which you were married", max_length=200, default="")
-    q_27 = models.CharField(
+    q_27 = models.TextField(
         name="27. ഈ വിശ്വാസത്തിലേക്ക് വരുന്നതിന് മുന്‍പ് ഉണ്ടായിരുന്ന വിശ്വാസ പശ്ചാത്തലം | Previous Faith (if any)", max_length=200, default="")
-    q_28 = models.CharField(
+    q_28 = models.TextField(
         name="28. പിതാവിന്‍റെ വിശ്വാസ പശ്ചാത്തലം | Father's faith background", max_length=200, default="")
-    q_29 = models.CharField(
+    q_29 = models.TextField(
         name="29. മാതാവിന്‍റെ വിശ്വാസ പശ്ചാത്തലം | Mother's faith background", max_length=200, default="")
-    q_30 = models.CharField(
+    q_30 = models.TextField(
         name="30. മറ്റു സഭകളില്‍ അംഗം ആയിരുന്നെങ്കില്‍ ആ സഭയുടെ പേരും അവിടെ തുടര്‍ന്ന വര്‍ഷങ്ങളും | Prevous Assembly (if any) & the no. of years you've attended it", max_length=200, default="")
 
     # Question 31 - 40
-    q_31 = models.CharField(
+    q_31 = models.TextField(
         name="31. നിലവിലെ അസംബ്ലിയിലെ അംഗമായി നിങ്ങൾ പലപ്പോഴും പങ്കെടുത്തിട്ടുള്ള മറ്റ് സഭയുടെ പേര് നൽകുക | Name other churches you've often attended being a member of the current assembly", max_length=300, default="")
     ## >> ജനന സ്ഥലം | Place of Birth << ##
     q_32_01 = models.CharField(
@@ -184,11 +184,11 @@ class Survey(models.Model):
         name="33. ഏതുതരം പ്രവർത്തനം | Kind of Operation", max_length=60, default="")
     q_34 = models.CharField(
         name="34. നിങ്ങളുടെ ജനനം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ടോ? | Is your birth registered", max_length=60, default="")
-    q_35 = models.CharField(
+    q_35 = models.TextField(
         name="35. ജനനം മുതൽ വൈകല്യങ്ങൾ | Disabilities from birth", max_length=60, default="")
     q_36 = models.DateField(name="36. മരണപ്പെട്ട തിയതി | Date of death",
                             max_length=60, default=date(day=11, month=11, year=1111))
-    q_37 = models.CharField(
+    q_37 = models.TextField(
         name="37. മരണ കാരണം | Cause of death", max_length=80, default="")
     ## >> ജനന സ്ഥലം | Place of Burial << ##
     q_38_01 = models.CharField(
@@ -206,8 +206,8 @@ class Survey(models.Model):
     q_38_07 = models.IntegerField(
         name="38g. പിൻ കോഡ് | Pincode", default=0)
     ## >> ജനന സ്ഥലം | Place of Burial << ##
-    q_39 = models.CharField(
-        "39. ശവസംസ്കാര ചടങ്ങ് സഭ കൈകാര്യം ചെയ്യുന്നു | Church handling the burial cerimony", max_length=80, default="")
+    q_39 = models.TextField(
+        "39. ശവസംസ്കാര ചടങ്ങ് സഭ കൈകാര്യം ചെയ്യുന്നു | Church handling the burial cerimony", max_length=300, default="")
 
     # File uploads
     q_40 = models.FileField(name="40. ഫോട്ടോ ഐഡി | Photo ID",
