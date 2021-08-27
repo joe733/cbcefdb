@@ -11,7 +11,7 @@ class Family(models.Model):
         "അംഗങ്ങളുടെ എണ്ണം | Number of members", default=1)
 
     def get_absolute_url(self):
-        return reverse('survey:to-be-defined', kwargs={'pk': self.pk})
+        return reverse(viewname='survey:family_info', kwargs={'pk': self.pk})
 
     def __str__(self) -> str:
         return self.fam_name
