@@ -1,6 +1,6 @@
-from django.db import models
 from datetime import date
-
+from django.db import models
+from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -9,6 +9,9 @@ class Family(models.Model):
         "കുടുംബ പേര് | Family Name", null=False, blank=False, max_length=100, default="")
     nofm = models.IntegerField(
         "അംഗങ്ങളുടെ എണ്ണം | Number of members", default=1)
+
+    def get_absolute_url(self):
+        return reverse('survey:to-be-defined', kwargs={'pk': self.pk})
 
     def __str__(self) -> str:
         return self.fam_name

@@ -4,9 +4,9 @@ from .models import Family
 
 
 class HomeView(TemplateView):
-    template_name = "survey/index.html"
+    template_name = "index.html"
 
 
 class FamilyView(ListView):
     model = Family
-    template_name = "survey/families.html"
+    template_name = "families.html"
