@@ -6,10 +6,10 @@
 
 <h2 class="text-center">Families</h2>
 
-{% if family_list %}
-<ul class="list-group">
+{% if list_family %}
+<ul class="list-group mt-4 mb-4">
 
-    {% for fam in family_list %}
+    {% for fam in list_family %}
     <li class="list-group-item">
         <a class="text-reset" href="author.get_absolute_url">{{ fam.fam_name }}</a>
     </li>
