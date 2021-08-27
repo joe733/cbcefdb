@@ -517,7 +517,7 @@
   },
   "33": {
     "element_type": "textbox",
-    "label": "ജനന സ്ഥലം | Kind of Operation",
+    "label": "ഏതുതരം പ്രവർത്തനം | Kind of Operation",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "placeholder": "",
@@ -533,7 +533,7 @@
   },
   "34": {
     "element_type": "textbox",
-    "label": "ജനന സ്ഥലം | Is your birth registered",
+    "label": "നിങ്ങളുടെ ജനനം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ടോ? | Is your birth registered",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "placeholder": "",
@@ -549,7 +549,7 @@
   },
   "35": {
     "element_type": "textbox",
-    "label": "ജനന സ്ഥലം | Disabilities from birth",
+    "label": "ജനനം മുതൽ വൈകല്യങ്ങൾ | Disabilities from birth",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "placeholder": "",
@@ -590,7 +590,7 @@
   },
   "38": {
     "element_type": "address",
-    "label": "ജനന സ്ഥലം | Place of Burial",
+    "label": "ശവസംസ്കാര സ്ഥലം | Place of Burial",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "sub_fd_l": [
       "Reference",
@@ -618,7 +618,7 @@
   },
   "39": {
     "element_type": "textbox",
-    "label": "ജനന സ്ഥലം | Church handling the cerimony",
+    "label": "ശവസംസ്കാര ചടങ്ങ് സഭ കൈകാര്യം ചെയ്യുന്നു | Church handling the burial ceremony",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "placeholder": "",
@@ -634,35 +634,35 @@
   },
   "40": {
     "element_type": "upload",
-    "label": "Photo ID",
+    "label": "ഫോട്ടോ ഐഡി | Photo ID",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "extension": ["jpg", "jpeg", "png", "pdf"]
   },
   "41": {
     "element_type": "upload",
-    "label": "Document proof for birth",
+    "label": "ജനനത്തിനുള്ള ഡോക്യുമെന്റ് പ്രൂഫ് | Document proof for birth",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "extension": ["jpg", "jpeg", "png", "pdf"]
   },
   "42": {
     "element_type": "upload",
-    "label": "Document proof for address",
+    "label": "വിലാസത്തിനുള്ള പ്രമാണ തെളിവ് | Document proof for address",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "extension": ["jpg", "jpeg", "png", "pdf"]
   },
   "43": {
     "element_type": "upload",
-    "label": "Document proof for marriage",
+    "label": "വിവാഹത്തിനുള്ള രേഖയുടെ തെളിവ് | Document proof for marriage",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "extension": ["jpg", "jpeg", "png", "pdf"]
   },
   "44": {
     "element_type": "upload",
-    "label": "Document proof for death",
+    "label": "മരണത്തിനുള്ള രേഖ തെളിവ് | Document proof for death",
     "store_cl": ["fam-reg", "bir-reg", "bap-reg", "mem-reg", "dth-reg"],
     "required": 0,
     "extension": ["jpg", "jpeg", "png", "pdf"]
