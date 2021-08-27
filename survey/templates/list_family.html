@@ -6,12 +6,12 @@
 
 <h2 class="text-center">Families</h2>
 
-{% if list_family %}
+{% if family_list %}
 <ul class="list-group mt-4 mb-4">
 
-    {% for fam in list_family %}
+    {% for fam in family_list %}
     <li class="list-group-item">
-        <a class="text-reset" href="author.get_absolute_url">{{ fam.fam_name }}</a>
+        <a class="text-reset" href="family.get_absolute_url">{{ fam.fam_name }}</a>
     </li>
     {% endfor %}
 
@@ -21,7 +21,7 @@
 {% endif %}
 
 <p class="pt-2">
-    <a href="{% url 'survey:survey-home' %}" role="button" class="btn btn-secondary w-100">Return</a>
+    <a href="{% url 'survey:survey_home' %}" role="button" class="btn btn-secondary w-100">Return</a>
 </p>
 
 {% endblock content %}
