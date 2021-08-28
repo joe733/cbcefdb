@@ -1,6 +1,7 @@
 from datetime import date
 from django.db import models
 from django.urls import reverse
+# from django.forms.models import ModelForm
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -238,8 +239,25 @@ class Person(models.Model):
     q_44 = models.FileField(verbose_name="44. മരണത്തിനുള്ള രേഖ തെളിവ് | Document proof for death",
                             upload_to="survey/assets/", blank=True, default="")
 
+    # def get_absolute_url(self):
+    #     return reverse(viewname='survey:family_info', kwargs={'pk': self.pk})
+
     def __str__(self) -> str:
         return self.q_01
 
     class Meta:
         verbose_name_plural = "People"
+
+
+# class PersonCreateModelForm(ModelForm):
+#     class Meta:
+#         model = Person
+#         template_name = "add_person.html"
+#         fields = "__all__"
+#         # fields = [f"q_{str(i).zfill(2)}" for i in range(1, 17)] + \
+#         #     [f"q_17_{str(i).zfill(2)}" for i in range(1, 9)] + \
+#         #     [f"q_{i}" for i in range(18, 32)] + \
+#         #     [f"q_32_{str(i).zfill(2)}" for i in range(1, 8)] + \
+#         #     [f"q_{i}" for i in range(33, 38)] + \
+#         #     [f"q_38_{str(i).zfill(2)}" for i in range(1, 8)] + \
+#         #     [f"q_{i}" for i in range(39, 45)]
