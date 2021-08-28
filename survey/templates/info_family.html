@@ -19,14 +19,37 @@
 </div>
 <hr />
 
-{% for fly in family.family_name.all %}
-<div class="small">ID: {{ fly.id }}</div>
-<div>Name: {{ fly.q_01 }}</div>
-<hr />
-{% endfor %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Attribute</th>
+            {% for fly in family.family_name.all %}
+            <th scope="co">{{ fly.id }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Name</td>
+            {% for fly in family.family_name.all %}
+            <td>{{ fly.q_01 }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Date of birth</td>
+            {% for fly in family.family_name.all %}
+            <td>{{ fly.q_04 }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
 
 <p>
-    <!-- <a href="\{% url 'survey:individual_edit' pk=author.pk %\}" role="button" class="btn btn-primary w-100 mt-4 mb-4">Edit Individual</a>-->
+    <a href="{% url 'survey:person_add' pk=author.pk %\}" role="button" class="btn btn-primary w-100 mt-4 mb-4">Add
+        Individual</a>
     <a href="{% url 'survey:family_list' %}" role="button" class="btn btn-secondary w-100">Return</a>
 </p>
 

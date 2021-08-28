@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 
+{% load django_bootstrap5 %}
+
 {% block title %} Families {% endblock %}
 
 {% block content %}
 
-<form action="" method="POST">
+<h3 class="text-center mb-4">Enter family details</h3>
+
+<form action="" method="POST" class="form">
   {% for hidden_field in form.hidden_fields %}
   {{ hidden_field.errors }} {{ hidden_field }}
   {% endfor %}
 
   {% csrf_token %}
 
-  {{ form.non_form_errors }}
+  {% bootstrap_form form %}
 
-  {% for field in form %}
-  {{ field.errors }}
-  {{ field.label_tag }} {{ field }}
-  {% endfor %}
+  {{ form.non_form_errors }}
 
   <p class="pt-2 mt-4">
     <button type="submit" class="btn btn-primary w-100 mb-4">Add Family</button>
     <a href="{% url 'survey:survey_home' %}" role="button" class="btn btn-secondary w-100">Cancel</a>
   </p>
-
 </form>
 
 {% endblock content %}
