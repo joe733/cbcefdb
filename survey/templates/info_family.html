@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 
+{% load django_bootstrap5 %}
+
 {% block title %} {{ family.fam_name }} {% endblock %}
 
 {% block content %}
 
+{% bootstrap_messages %}
+
 <h2 class="text-center">Familiy: {{ family.fam_name }} </h2>
 
-{% if messages %}
+<!-- {\% if messages %}
 <ul class="list-group mt-4 mb-4 messages">
-    {% for message in messages %}
+    {\% for message in messages %}
     <li class="list-group-item list-group-item-success">{{ message }}</li>
-    {% endfor %}
+    {\% endfor %}
 </ul>
-{% endif %}
+{\% endif %} -->
 
 <div class="d-flex d-flex-inline"><span class="pe-2">Number of members:</span>
     <h5>{{ family.nofm }}</h5>

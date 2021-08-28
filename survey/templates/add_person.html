@@ -6,18 +6,18 @@
 
 {% block content %}
 
-<h3 class="text-center mb-4">Enter individual's details</h3>
-
 {% bootstrap_messages %}
 
+<h3 class="text-center mb-4">Enter individual's details</h3>
+
 <form action="" method="POST" class="form" enctype="multipart/form-data">
-    {% for hidden_field in form.hidden_fields %}
-    {{ hidden_field.errors }} {{ hidden_field }}
-    {% endfor %}
+    <!-- {\% for hidden_field in form.hidden_fields %}
+    {\{ hidden_field.errors }} {\{ hidden_field }}
+    {\% endfor %} -->
 
     {% csrf_token %}
 
-    {{ form.non_form_errors }}
+    <!-- {\{ form.non_form_errors }} -->
 
     {% bootstrap_form form show_placeholders=False %}
 

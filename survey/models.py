@@ -239,8 +239,8 @@ class Person(models.Model):
     q_44 = models.FileField(verbose_name="44. മരണത്തിനുള്ള രേഖ തെളിവ് | Document proof for death",
                             upload_to="survey/assets/", blank=True, default="")
 
-    # def get_absolute_url(self):
-    #     return reverse(viewname='survey:family_info', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse(viewname='survey:family_info', kwargs={'pk': self.fly.pk})
 
     def __str__(self) -> str:
         return self.q_01

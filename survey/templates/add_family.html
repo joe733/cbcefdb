@@ -6,12 +6,14 @@
 
 {% block content %}
 
+{% bootstrap_messages %}
+
 <h3 class="text-center mb-4">Enter family details</h3>
 
 <form action="" method="POST" class="form">
-  {% for hidden_field in form.hidden_fields %}
-  {{ hidden_field.errors }} {{ hidden_field }}
-  {% endfor %}
+  <!-- {\% for hidden_field in form.hidden_fields %}
+  {\{ hidden_field.errors }} {\{ hidden_field }}
+  {\% endfor %} -->
 
   {% csrf_token %}
 
