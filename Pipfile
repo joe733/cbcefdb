@@ -6,10 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 autopep8 = "*"
-django-crispy-forms = "*"
-crispy-bootstrap5 = "*"
 django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
-django-address = "*"
+django-bootstrap5 = "*"
 
 [dev-packages]
 
