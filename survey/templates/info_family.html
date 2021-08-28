@@ -4,6 +4,31 @@
 
 {% block content %}
 
-<h2 class="text-center">Families</h2>
+<h2 class="text-center">Familiy: {{ family.fam_name }} </h2>
+
+{% if messages %}
+<ul class="list-group mt-4 mb-4 messages">
+    {% for message in messages %}
+    <li class="list-group-item list-group-item-success">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div class="d-flex d-flex-inline"><span class="pe-2">Number of members:</span>
+    <h5>{{ family.nofm }}</h5>
+</div>
+<hr />
+
+{% for fly in family.family_name.all %}
+<div class="small">ID: {{ fly.id }}</div>
+<div>Name: {{ fly.q_01 }}</div>
+<hr />
+{% endfor %}
+
+<p>
+    <!-- <a href="\{% url 'survey:individual_edit' pk=author.pk %\}" role="button" class="btn btn-primary w-100 mt-4 mb-4">Edit Individual</a>-->
+    <a href="{% url 'survey:family_list' %}" role="button" class="btn btn-secondary w-100">Return</a>
+</p>
+
 
 {% endblock content %}
