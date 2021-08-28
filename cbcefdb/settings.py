@@ -127,6 +127,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+BOOTSTRAP5 = {
+    'set_placeholder': False,
+}
+
 # Phone Number format
 PHONENUMBER_DB_FORMAT = 'NATIONAL'
 
