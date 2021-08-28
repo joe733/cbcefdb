@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load django_bootstrap5 %}
+
+{% block title %} Person {% endblock %}
+
+{% block content %}
+
+<h3 class="text-center mb-4">Enter individual's details</h3>
+
+{% bootstrap_messages %}
+
+<form action="" method="POST" class="form" enctype="multipart/form-data">
+    {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field.errors }} {{ hidden_field }}
+    {% endfor %}
+
+    {% csrf_token %}
+
+    {{ form.non_form_errors }}
+
+    {% bootstrap_form form show_placeholders=False %}
+
+    <p class="pt-2 mt-4">
+        <button type="submit" class="btn btn-primary w-100 mb-4">Add Person</button>
+        <a href="{% url 'survey:survey_home' %}" role="button" class="btn btn-secondary w-100">Cancel</a>
+    </p>
+</form>
+
+{% endblock content %}
