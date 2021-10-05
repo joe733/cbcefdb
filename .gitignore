@@ -141,5 +141,6 @@ cython_debug/
 .vscode/
 
 # Custom
+accessdb/networkdb/*
 accessdb/Registry/*
 !accessdb/Registry/defaultFamSheet.xlsx
